@@ -79,6 +79,8 @@ def countElementsByCriteria(criteria, column, lst):
     """
     Retorna la cantidad de elementos que cumplen con un criterio para una columna dada
     """
+    """director:list, movies:list"""
+    voto_promedio>=6
     return 0
 
 
@@ -89,7 +91,9 @@ def main():
         inputs =input('Seleccione una opción para continuar\n') #leer opción ingresada
         if len(inputs)>0:
             if int(inputs[0])==1: #opcion 1
-                loadCSVFile("Data/test.csv", lista) #llamar funcion cargar datos
+                lista1=loadCSVFile("Data/MoviesCastingRaw-small.csv", lista) #llamar funcion cargar datos
+                print("Datos cargados, "+str(len(lista))+" elementos cargados")
+                lista2=loadCSVFile("Data/SmallMoviesDetailsCleaned.csv", lista)
                 print("Datos cargados, "+str(len(lista))+" elementos cargados")
             elif int(inputs[0])==2: #opcion 2
                 if len(lista)==0: #obtener la longitud de la lista
